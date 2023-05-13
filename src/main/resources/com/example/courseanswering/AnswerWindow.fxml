@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600" prefWidth="950" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.courseanswering.Controller.AnswerWinController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="208.0" layoutX="188.0" layoutY="29.0" stroke="BLACK" strokeType="INSIDE" width="441.0" />
+      <Label layoutX="53.0" layoutY="59.0" prefHeight="39.0" prefWidth="101.0" text="问题：">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Line endX="960.0" endY="280.0" startY="280.0" strokeWidth="2.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Line>
+      <Label layoutX="53.0" layoutY="362.0" prefHeight="39.0" prefWidth="101.0" text="解答：">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="answer" layoutX="188.0" layoutY="315.0" prefHeight="246.0" prefWidth="728.0" />
+      <Text fx:id="question" layoutX="202.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="413.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Label layoutX="652.0" layoutY="64.0" text="提问者：">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f6f7f800" height="60.0" layoutX="749.0" layoutY="49.0" stroke="BLACK" strokeType="INSIDE" width="155.0" />
+      <Text fx:id="student" layoutX="764.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="124.240234375">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="submit" layoutX="749.0" layoutY="170.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="53.0" prefWidth="155.0" text="获取下一个">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

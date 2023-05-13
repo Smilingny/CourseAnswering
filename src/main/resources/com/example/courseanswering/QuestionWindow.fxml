@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.collections.FXCollections?>
+<AnchorPane fx:id="aa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.courseanswering.Controller.QuestionWinController">
+   <children>
+      <Label layoutX="48.0" layoutY="517.0" text="姓名：">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="name" layoutX="153.0" layoutY="506.0" prefHeight="60.0" prefWidth="221.0" promptText="输入姓名" />
+      <TextArea fx:id="question4" layoutX="153.0" layoutY="302.0" prefHeight="80.0" prefWidth="560.0" promptText="在此处输入问题" wrapText="true" />
+      <Label layoutX="33.0" layoutY="50.0" text="问题一：">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="question3" layoutX="153.0" layoutY="208.0" prefHeight="80.0" prefWidth="560.0" promptText="在此处输入问题" wrapText="true" />
+      <TextArea fx:id="question2" layoutX="153.0" layoutY="118.0" prefHeight="80.0" prefWidth="560.0" promptText="在此处输入问题" wrapText="true" />
+      <Label layoutX="33.0" layoutY="324.0" text="问题四：">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="230.0" text="问题三：">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="140.0" text="问题二：">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="question5" layoutX="153.0" layoutY="392.0" prefHeight="80.0" prefWidth="560.0" promptText="在此处输入问题" wrapText="true" />
+      <Label layoutX="33.0" layoutY="414.0" text="问题五：">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="submit" layoutX="649.0" layoutY="500.0" mnemonicParsing="false" onAction="#summitQuestion" prefHeight="72.0" prefWidth="190.0" text="确认提交">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Button>
+      <ChoiceBox fx:id="expectTime1" layoutX="839.0" layoutY="50.0" prefHeight="48.0" prefWidth="100.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <Integer fx:value="5" />
+               <Integer fx:value="10" />
+               <Integer fx:value="15" />
+               <Integer fx:value="20" />
+               <Integer fx:value="25" />
+               <Integer fx:value="30" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <Label layoutX="724.0" layoutY="28.0" text="预计时间" />
+      <Label layoutX="742.0" layoutY="73.0" text="(min)" />
+      <Label layoutX="750.0" layoutY="166.0" text="(min)" />
+      <Label layoutX="732.0" layoutY="121.0" text="预计时间" />
+      <ChoiceBox fx:id="expectTime2" layoutX="839.0" layoutY="134.0" prefHeight="48.0" prefWidth="100.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <Integer fx:value="5" />
+               <Integer fx:value="10" />
+               <Integer fx:value="15" />
+               <Integer fx:value="20" />
+               <Integer fx:value="25" />
+               <Integer fx:value="30" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <Label layoutX="750.0" layoutY="255.0" text="(min)" />
+      <Label layoutX="732.0" layoutY="210.0" text="预计时间" />
+      <ChoiceBox fx:id="expectTime3" layoutX="839.0" layoutY="231.0" prefHeight="48.0" prefWidth="100.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <Integer fx:value="5" />
+               <Integer fx:value="10" />
+               <Integer fx:value="15" />
+               <Integer fx:value="20" />
+               <Integer fx:value="25" />
+               <Integer fx:value="30" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <Label layoutX="739.0" layoutY="349.0" text="(min)" />
+      <Label layoutX="721.0" layoutY="304.0" text="预计时间" />
+      <ChoiceBox fx:id="expectTime4" layoutX="836.0" layoutY="326.0" prefHeight="48.0" prefWidth="100.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <Integer fx:value="5" />
+               <Integer fx:value="10" />
+               <Integer fx:value="15" />
+               <Integer fx:value="20" />
+               <Integer fx:value="25" />
+               <Integer fx:value="30" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <Label layoutX="739.0" layoutY="439.0" text="(min)" />
+      <Label layoutX="721.0" layoutY="394.0" text="预计时间" />
+      <ChoiceBox fx:id="expectTime5" layoutX="836.0" layoutY="416.0" prefHeight="48.0" prefWidth="100.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <Integer fx:value="5" />
+               <Integer fx:value="10" />
+               <Integer fx:value="15" />
+               <Integer fx:value="20" />
+               <Integer fx:value="25" />
+               <Integer fx:value="30" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <TextArea fx:id="question1" layoutX="153.0" layoutY="28.0" prefHeight="80.0" prefWidth="560.0" promptText="在此处输入问题" wrapText="true" />
+   </children>
+</AnchorPane>
