@@ -13,7 +13,7 @@ public class Dispatch {
      * @return
      */
     public static Student nextStudent(ArrayList<Student> students){
-        return new Student("test1");
+        return new Student("test1");  // 编写时删除该行
     }
 
     /**
@@ -23,7 +23,7 @@ public class Dispatch {
      * @return
      */
     public static Question nextQuestion(Student student) {
-        return new Question("test2",100L);
+        return new Question("test2",100L); // 编写时删除该行
     }
 
     /**
