@@ -20,8 +20,8 @@ public class AnswerWinController {
     private Text student;
 
     @FXML
-    void submitAnswer() {
-
+    public String submitAnswer() {
+        return answer.getText();
     }
 
 }

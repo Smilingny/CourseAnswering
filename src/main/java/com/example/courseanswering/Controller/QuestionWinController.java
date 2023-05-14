@@ -11,7 +11,6 @@ import javafx.scene.layout.AnchorPane;
 
 public class QuestionWinController {
 
-
     @FXML
     private AnchorPane aa;
 
@@ -53,7 +52,7 @@ public class QuestionWinController {
 
 
     @FXML
-    Student summitQuestion() {
+    public Student summitQuestion() {
         Student student = new Student(name.getText());
         Question[] questions = new Question[5];
 

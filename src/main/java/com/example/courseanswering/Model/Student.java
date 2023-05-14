@@ -26,4 +26,8 @@ public class Student {
     public void setQuestions(Question[] questions) {
         this.questions = questions;
     }
+
+    public String getName(){
+        return name;
+    }
 }
