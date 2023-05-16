@@ -63,20 +63,26 @@ public class Main extends Application {
 
 //        开始解答
         AnswerWinController answerWinController = answerLoader.getController();
-        Student student = Dispatch.nextStudent(stu);
-        Question question = Dispatch.nextQuestion(student);
         Button getButton = (Button) scene1.lookup("#submit");
         Text questionText = (Text) scene1.lookup("#question");
         Text name = (Text) scene1.lookup("name");
-        time[0] = System.currentTimeMillis();
         getButton.setOnAction(actionEvent -> {
+            Student student = Dispatch.nextStudent(stu);
+            Question question = Dispatch.nextQuestion(student);
             time[1]=System.currentTimeMillis();
             time[2]=time[1]-time[0];
+            name.setText(student.getName());
             questionText.setText(question.getContent());
-            time[1] = System.currentTimeMillis();
+            time[0] = System.currentTimeMillis();
             int index = Arrays.binarySearch(student.getQuestions(),question);
             TextArea answer = (TextArea) scene.lookup("#question"+index);
             answer.setText(answerWinController.submitAnswer());
+            student.setPriority(student.getPriority()-1);
+            if (time[2] > question.getExpectTime()) {
+                student.setPriority(student.getPriority()-1);
+            } else {
+                student.setPriority(student.getPriority()+1);
+            }
         });
 
     }
