@@ -9,11 +9,20 @@ public class Dispatch {
     /**
      * （詹负责） 删除students中所有问题回答完成的student（isAllAnswered=true），并返回剩下student中优先级最高的
      * priority默认为5
-     * @param students
-     * @return
      */
     public static Student nextStudent(ArrayList<Student> students){
-        return new Student("test1");  // 编写时删除该行
+        ArrayList<Student> toRemove = new ArrayList<>();//创建待删除列表
+        Student highestPriority = null;
+        for (Student student : students) {
+            if (student.isAllAnswered()) {
+                toRemove.add(student);
+            } //回答完问题学生加入待删除列表
+            else if (highestPriority == null || student.getPriority() > highestPriority.getPriority()) {
+                highestPriority = student;
+            }//设置高优先级，如果还没有找到，就将当前学生设置为高优先级
+        }
+        students.removeAll(toRemove);//删除
+        return highestPriority;
     }
 
     /**

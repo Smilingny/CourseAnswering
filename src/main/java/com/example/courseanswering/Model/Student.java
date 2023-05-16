@@ -30,4 +30,8 @@ public class Student {
     public String getName(){
         return name;
     }
+
+    public boolean isAllAnswered() {
+        return isAllAnswered;
+    }
 }
