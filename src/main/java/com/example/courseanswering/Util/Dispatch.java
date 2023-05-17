@@ -32,7 +32,17 @@ public class Dispatch {
      * @return
      */
     public static Question nextQuestion(Student student) {
-        return new Question("test2",100L); // 编写时删除该行
+        int highestPriority = Integer.MAX_VALUE; // 初始化为最高优先级
+        Question highestPriorityQuestion = null;
+        Question[] questions = student.getQuestions();
+        for (Question question : questions) {
+            // 如果该问题未被回答且优先级比当前最高优先级高
+            if (!question.isAnswered() && question.getPriority() < highestPriority) {
+                highestPriority = question.getPriority(); // 更新最高优先级
+                highestPriorityQuestion = question; // 记录该问题
+            }
+        }
+        return highestPriorityQuestion;
     }
 
     /**
@@ -41,6 +51,18 @@ public class Dispatch {
      * @param student
      */
     public static void setQuestionPriority(Student student) {
-
+        Question[] questions = student.getQuestions();
+        for (Question question : questions) {
+            long expectedTime = question.getExpectedTime(); // 获取预期时间
+            if (expectedTime <= 20) {
+                question.setPriority(1);
+            } else if (expectedTime <= 60) {
+                question.setPriority(2);
+            } else if (expectedTime <= 120) {
+                question.setPriority(3);
+            } else {
+                question.setPriority(4);
+            }
+        }
     }
 }

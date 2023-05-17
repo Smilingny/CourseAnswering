@@ -27,4 +27,12 @@ public class Question {
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
+
+    public int getExpectedTime() {
+        return 0;
+    }
+
+    public boolean isAnswered() {
+        return true;
+    }
 }
