@@ -36,10 +36,12 @@ public class Dispatch {
         Question highestPriorityQuestion = null;
         Question[] questions = student.getQuestions();
         for (Question question : questions) {
-            // 如果该问题未被回答且优先级比当前最高优先级高
-            if (!question.isAnswered() && question.getPriority() < highestPriority) {
-                highestPriority = question.getPriority(); // 更新最高优先级
-                highestPriorityQuestion = question; // 记录该问题
+            if(question!=null) {
+                // 如果该问题未被回答且优先级比当前最高优先级高
+                if (!question.isAnswered() && question.getPriority() < highestPriority) {
+                    highestPriority = question.getPriority(); // 更新最高优先级
+                    highestPriorityQuestion = question; // 记录该问题
+                }
             }
         }
         return highestPriorityQuestion;
@@ -53,15 +55,17 @@ public class Dispatch {
     public static void setQuestionPriority(Student student) {
         Question[] questions = student.getQuestions();
         for (Question question : questions) {
-            long expectedTime = question.getExpectedTime(); // 获取预期时间
-            if (expectedTime <= 20) {
-                question.setPriority(1);
-            } else if (expectedTime <= 60) {
-                question.setPriority(2);
-            } else if (expectedTime <= 120) {
-                question.setPriority(3);
-            } else {
-                question.setPriority(4);
+            if(question != null) {
+                Long expectedTime = question.getExpectedTime(); // 获取预期时间
+                if (expectedTime <= 5 * 60000L) {
+                    question.setPriority(1);
+                } else if (expectedTime <= 10 * 60000L) {
+                    question.setPriority(2);
+                } else if (expectedTime <= 15 * 60000L) {
+                    question.setPriority(3);
+                } else {
+                    question.setPriority(4);
+                }
             }
         }
     }

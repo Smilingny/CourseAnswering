@@ -1,7 +1,7 @@
 package com.example.courseanswering.Model;
 
 public class Question {
-    Boolean isAnswered = false;
+    private Boolean isAnswered = false;
     private final String content;
     private final Long expectTime;
 
@@ -28,11 +28,15 @@ public class Question {
         this.priority = priority;
     }
 
-    public int getExpectedTime() {
-        return 0;
+    public Long getExpectedTime() {
+        return expectTime;
     }
 
     public boolean isAnswered() {
-        return true;
+        return isAnswered;
+    }
+
+    public void answered(){
+        isAnswered=true;
     }
 }
