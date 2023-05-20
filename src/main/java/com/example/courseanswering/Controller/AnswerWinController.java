@@ -21,7 +21,9 @@ public class AnswerWinController {
 
     @FXML
     public String submitAnswer() {
-        return answer.getText();
+        String a = answer.getText();
+        answer.clear();
+        return a;
     }
 
 }

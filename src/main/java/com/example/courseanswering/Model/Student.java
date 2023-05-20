@@ -32,6 +32,12 @@ public class Student {
     }
 
     public boolean isAllAnswered() {
+        for (Question question : questions) {
+            isAllAnswered=false;
+            if (question != null && question.isAnswered()) {
+                isAllAnswered=true;
+            }
+        }
         return isAllAnswered;
     }
 }

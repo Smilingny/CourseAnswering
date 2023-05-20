@@ -73,12 +73,9 @@ public class QuestionWinController {
         for (int i = 0; i < 5; i++) {
             if (!question[i].getText().equals("")) {
                 questions[i] = new Question(question[i].getText(), epTime[i].getValue().longValue() * 60000);
-                question[i].clear();
-                epTime[i].setValue(null);
             }
         }
         student.setQuestions(questions);
-        name.clear();
         return student;
     }
 

@@ -38,7 +38,7 @@ public class Dispatch {
         for (Question question : questions) {
             if(question!=null) {
                 // 如果该问题未被回答且优先级比当前最高优先级高
-                if (!question.isAnswered() && question.getPriority() < highestPriority) {
+                if (!question.isAnswered() && question.getPriority() <= highestPriority) {
                     highestPriority = question.getPriority(); // 更新最高优先级
                     highestPriorityQuestion = question; // 记录该问题
                 }
