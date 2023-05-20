@@ -1,7 +1,6 @@
 package com.example.courseanswering.Model;
 
 public class Student {
-    Boolean isAllAnswered = false;
     String name;
     Integer priority = 5;
 
@@ -33,11 +32,10 @@ public class Student {
 
     public boolean isAllAnswered() {
         for (Question question : questions) {
-            isAllAnswered=false;
-            if (question != null && question.isAnswered()) {
-                isAllAnswered=true;
+            if (question != null && !question.isAnswered()) {
+                return false;
             }
         }
-        return isAllAnswered;
+        return true;
     }
 }
